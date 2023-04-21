@@ -1,0 +1,30 @@
+{
+  "name": "node-server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "npm-run-all sass build",
+    "dev": "npm-run-all --parallel serve watch ui",
+    "build": "node server.js",
+    "sass": "sass --no-source-map scss/main.scss:css/main.min.css --style compressed",
+    "serve": "nodemon -e * server.js",
+    "watch": "sass --no-source-map --watch scss/main.scss:css/main.min.css --style compressed",
+    "ui": "browser-sync start --proxy localhost:5000 --files= **/*  --ignore=node_modules"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "autoprefixer": "^10.4.14",
+    "browser-sync": "^2.29.1",
+    "nodemon": "^2.0.15",
+    "npm-run-all": "^4.1.5",
+    "path": "^0.12.7"
+  },
+  "dependencies": {
+    "express": "^4.18.1",
+    "express-handlebars": "^7.0.2",
+    "sass": "^1.62.0"
+  }
+}
