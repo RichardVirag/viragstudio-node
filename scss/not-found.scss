@@ -1,0 +1,64 @@
+@import "base";
+
+.not-found {
+  background-color: $primaryColor;
+  padding: 200px 0;
+  
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #fff;
+    row-gap: 30px;
+
+    i {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 140px;
+      transform: rotate(45deg);
+
+      div {
+        background: #fff;
+        border-radius: 5px;
+
+        &:first-child {
+          width: 140px;
+          height: 35px;
+        }
+
+        &:last-child {
+          width: 35px;
+          height: 140px;
+          position: absolute;
+          left: 50%;
+          transform: translateX(-50%);
+        }
+      }
+    }
+    
+    h1 {
+      font-weight: 900;
+      font-size: 50px;
+    }
+
+    p {
+      font-size: 24px;
+      font-weight: 300;
+      line-height: 120%;
+      width: 650px;
+    }
+
+    a {
+      margin-top: 50px;
+      background: #fff;
+
+      &:hover {
+        background: transparent;
+      }
+    }
+  }
+}

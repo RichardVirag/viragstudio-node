@@ -17,3 +17,5 @@ server.engine(
 );
 
 routes(server);
+
+server.locals.copyright = new Date().getFullYear();
