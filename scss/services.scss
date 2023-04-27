@@ -1,0 +1,126 @@
+@import "base";
+
+.services {
+  .advantages {
+    padding: 100px 0;
+    background-image: linear-gradient(45deg, #051937, #004d7a, #008793, #00bf72, #a8eb12);
+    
+    .container {
+      color: #fff;
+      display: grid;
+      grid-template: "a b c" "a d e";
+      align-items: center;
+      gap: 50px;
+
+      h1 {
+        display: grid;
+        grid-area: a;
+        font-weight: 900;
+        font-size: 80px;
+      }
+
+      div {
+        display: grid;
+        border-left: 4px solid #fff;
+        background: rgba(255, 255, 255, .1);
+        padding: 30px;
+
+        h3 {
+          font-size: 45px;
+          font-weight: 900;
+          margin-bottom: 10px;
+        }
+
+        p {
+          font-weight: 300;
+          font-size: 20px;
+        }
+      }
+
+      div:nth-child(2) {
+        grid-area: b;
+      }
+      div:nth-child(3) {
+        grid-area: c;
+      }
+      div:nth-child(4) {
+        grid-area: d;
+      }
+      div:nth-child(5) {
+        grid-area: e;
+      }
+    };
+  }
+
+  .left,
+  .right {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    div {
+      width: 100%;
+      height: 80vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0 100px;
+
+      main {
+        text-align: center;
+      }
+      
+      h2 {
+        font-weight: 900;
+        font-size: 40px;
+        color: $darkColor;
+        margin-bottom: 30px;
+      }
+
+      p {
+        color: $secondaryColor;
+        font-size: 24px;
+        line-height: 130%;
+      }
+    }
+  }
+
+  .left {
+    div:first-child {
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+
+    &.dashboard {
+      div:first-child {
+        background-image: url(../media/img/dashboard-service.jpg);
+      }
+    }
+
+    &.branding {
+      div:first-child {
+        background-image: url(../media/img/branding-service.jpg);
+      }
+    }
+  }
+
+  .right {
+    div:last-child {
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+    
+    &.web {
+      div:last-child {
+        background-image: url(../media/img/web-service.jpg);
+      }
+    }
+
+    &.development {
+      div:last-child {
+        background-image: url(../media/img/development-service.jpg);
+      }
+    }
+  }
+}
