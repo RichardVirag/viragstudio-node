@@ -1,0 +1,118 @@
+@import "base";
+
+.about {
+  .top-page {
+    background-image: url("../media//img//about.webp");
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    h2 {
+      color: #fff;
+    }
+  }
+
+  .count {
+    padding: 100px 0;
+
+    .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      div {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        span {
+          font-weight: 600;
+          font-size: 50px;
+          color: $darkColor;
+          margin-bottom: 10px;
+        }
+
+        p {
+          font-size: 18px;
+          font-weight: 300;
+          color: $secondaryColor;
+          text-transform: uppercase;
+        }
+      }
+    }
+  }
+
+  .icon {
+    display: flex;
+    height: 80vh;
+    align-items: center;
+    justify-content: center;
+
+    div {
+      width: 50%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      &:first-child {
+        padding:  100px;
+        padding-left: 11vw;
+        flex-direction: column;
+
+        h2 {
+          font-size: 50px;
+          font-weight: 700;
+          color: $secondaryColor;
+          margin-bottom: 30px;
+        }
+
+        p {
+          font-weight: 300;
+          color: $secondaryColor;
+          font-size: 34px;
+          line-height: 130%;
+        }
+      }
+
+      &:last-child {
+        background: $primaryColor;
+
+        svg {
+          width: 150px;
+          fill: #fff;
+        }
+      }
+    }
+  }
+
+  .clients {
+    padding: 100px 0;
+    background: $lightColor;
+    
+    .container {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      align-items: center;
+      justify-content: center;
+      row-gap: 100px;
+
+      div {
+        width: 200px;
+        height: 30px;
+        background: $darkColor;
+      }
+    }
+  }
+
+  .purpose {
+    padding: 100px 0;
+
+    .container {
+      h1 {
+        font-weight: 900;
+        color: $darkColor;
+        font-size: 70px;
+      }
+    }
+  }
+}

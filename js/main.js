@@ -32,3 +32,42 @@ shover = function(index, imgName) {
     document.querySelector('img.s-hover-img').style.opacity = 1;
   }, 200)
 }
+
+let years = 0;
+function counterYears() {
+  document.querySelector('#years').innerHTML = `+${years}`;
+  setTimeout(() => {
+    years++;
+
+    if (years <= 7) {
+      counterYears()
+    }
+  }, 200);
+}
+counterYears();
+
+let lines = 0;
+function counterLines() {
+  document.querySelector('#lines').innerHTML = `+${lines}`;
+  setTimeout(() => {
+    lines += 200;
+
+    if (lines <= 100000) {
+      counterLines()
+    }
+  }, .5);
+}
+counterLines();
+
+let clients = 0;
+function counterClients() {
+  document.querySelector('#clients').innerHTML = `+${clients}`;
+  setTimeout(() => {
+    clients++;
+
+    if (clients <= 26) {
+      counterClients()
+    }
+  }, 100);
+}
+counterClients();

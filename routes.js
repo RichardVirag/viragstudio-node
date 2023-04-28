@@ -14,6 +14,11 @@ module.exports = (server) => {
     res.render('services');
   });
 
+  server.get("/sobre", (req, res) => {
+    server.locals.title = 'Descubra sobre nós';
+    res.render('about', { whiteHeader: true });
+  });
+
   server.use((req, res) => {
     server.locals.title = '404';
     res.status(404).render('404', { whiteHeader: true });
