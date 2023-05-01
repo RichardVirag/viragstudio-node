@@ -1,7 +1,4 @@
-$primaryColor: #ff7a4d;
-$secondaryColor: #384952;
-$darkColor: #021b29;
-$lightColor: #e3eaee;
+@import "./variables.scss";
 
 html {
   scroll-behavior: smooth;
@@ -25,8 +22,9 @@ input, textarea, label {
 }
 
 .container {
-  margin-left: 180px;
-  margin-right: 180px;
+  width: 1552px;
+  margin-left: auto;
+  margin-right: auto;
   padding-left: 40px;
   padding-right: 40px;
 }

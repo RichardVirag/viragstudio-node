@@ -1,0 +1,63 @@
+@import "./variables.scss";
+
+.portfolio {
+  .columns {
+    .container {
+      display: flex;
+      flex-direction: row;
+      column-gap: 30px;
+      margin-bottom: 100px;
+  
+      .column {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        row-gap: 30px;
+    
+        a {
+          background: $lightColor;
+          display: flex;
+          width: 100%;
+          position: relative;
+    
+          &.sm {
+            height: 200px;
+          }
+    
+          &.md {
+            height: 350px;
+          }
+    
+          &.lg {
+            height: 670px;
+          }
+
+          .hover {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: $secondaryColor;
+            transition: .7s ease;
+            opacity: 0;
+
+            .logo {
+              width: 70%;
+              height: 50%;
+              background: $primaryColor;
+            }
+          }
+
+          &:hover {
+            .hover {
+              opacity: 1;
+            }
+          }
+        }
+      }
+    }
+  }
+}
