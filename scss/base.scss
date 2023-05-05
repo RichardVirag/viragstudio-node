@@ -2,6 +2,13 @@
 
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
+  width: 100vw;
+}
+
+body {
+  overflow-x: hidden;
+  width: 100vw;
 }
 
 ::-webkit-scrollbar {
@@ -27,6 +34,16 @@ input, textarea, label {
   margin-right: auto;
   padding-left: 40px;
   padding-right: 40px;
+  
+  @media (max-width: 1602px) {
+    width: 1252px;
+  }
+  @media (max-width: 1282px) {
+    width: 952px;
+  }
+  @media (max-width: 982px) {
+    width: 100%;
+  }
 }
 
 .btn {
@@ -41,6 +58,11 @@ input, textarea, label {
   &.lg {
     font-size: 18px;
     padding: 22px 70px;
+
+    @media (max-width: 482px) {
+      font-size: 16px;
+      padding: 18px 40px;
+    }
   }
 
   &.md {
@@ -63,5 +85,13 @@ input, textarea, label {
     font-weight: 900;
     font-size: 80px;
     text-transform: uppercase;
+  }
+}
+
+.p-100-0 {
+  padding: 100px 0;
+
+  @media (max-width: 982px) {
+    padding: 60px 0;
   }
 }

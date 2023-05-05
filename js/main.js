@@ -1,7 +1,7 @@
 AOS.init();
 
 window.onscroll = function () {
-  if (document.body.scrollTop !== 0) {
+  if ( window.pageYOffset !== 0) {
     document.querySelector('header').setAttribute('scrolled', '')
   } else {
     document.querySelector('header').removeAttribute('scrolled')
