@@ -7,9 +7,9 @@
     "start": "npm-run-all sass build",
     "dev": "npm-run-all --parallel serve watch ui",
     "build": "node server.js",
-    "sass": "sass --no-source-map scss/main.scss:css/main.min.css --style compressed",
+    "sass": "sass --no-source-map scss/main.scss:assets/css/main.min.css --style compressed",
     "serve": "nodemon -e * server.js",
-    "watch": "sass --no-source-map --watch scss/main.scss:css/main.min.css --style compressed",
+    "watch": "sass --watch --no-source-map scss/main.scss:assets/css/main.min.css --style compressed",
     "ui": "browser-sync start --proxy localhost:5000 --files= **/*  --ignore=node_modules"
   },
   "keywords": [],

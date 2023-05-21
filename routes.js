@@ -24,6 +24,16 @@ module.exports = (server) => {
     res.render('portfolio');
   });
 
+  server.get("/portfolio/totalmegastore", (req, res) => {
+    server.locals.title = 'Total Megastore';
+    res.render('totalmegastore');
+  });
+
+  server.get("/portfolio/honofreviagens", (req, res) => {
+    server.locals.title = 'Honofre viagens';
+    res.render('honofreviagens');
+  });
+
   server.use((req, res) => {
     server.locals.title = 'Ops, algo de errado não está certo';
     res.status(404).render('404', { whiteHeader: true });

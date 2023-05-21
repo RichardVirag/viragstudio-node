@@ -35,6 +35,10 @@ shover = function(index, imgName) {
 
 let years = 0;
 function counterYears() {
+  if (!document.querySelector('#years')) {
+    return;
+  }
+
   document.querySelector('#years').innerHTML = `+${years}`;
   setTimeout(() => {
     years++;
@@ -48,6 +52,10 @@ counterYears();
 
 let lines = 0;
 function counterLines() {
+  if (!document.querySelector('#lines')) {
+    return;
+  }
+
   document.querySelector('#lines').innerHTML = `+${lines}`;
   setTimeout(() => {
     lines += 200;
@@ -61,6 +69,10 @@ counterLines();
 
 let clients = 0;
 function counterClients() {
+  if (!document.querySelector('#clients')) {
+    return;
+  }
+
   document.querySelector('#clients').innerHTML = `+${clients}`;
   setTimeout(() => {
     clients++;
