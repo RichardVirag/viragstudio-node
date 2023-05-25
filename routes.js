@@ -49,6 +49,21 @@ module.exports = (server) => {
     res.render('wilsondias');
   });
 
+  server.get("/portfolio/professionaladvisor", (req, res) => {
+    server.locals.title = 'Portfolio Professional Advisor';
+    res.render('professionaladvisor');
+  });
+
+  server.get("/portfolio/viragstudio", (req, res) => {
+    server.locals.title = 'Portfolio ViragStudio';
+    res.render('viragstudio');
+  });
+
+  server.get("/portfolio/tornero", (req, res) => {
+    server.locals.title = 'Portfolio Tornerô';
+    res.render('tornero');
+  });
+
   server.use((req, res) => {
     server.locals.title = 'Ops, algo de errado não está certo';
     res.status(404).render('404', { whiteHeader: true });
