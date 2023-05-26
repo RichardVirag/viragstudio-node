@@ -64,6 +64,21 @@ module.exports = (server) => {
     res.render('tornero');
   });
 
+  server.get("/portfolio/belaflora", (req, res) => {
+    server.locals.title = 'Portfolio Bela Flora Jardinagem';
+    res.render('belaflora');
+  });
+
+  server.get("/portfolio/rockdimension", (req, res) => {
+    server.locals.title = 'Portfolio Rock Dimension';
+    res.render('rockdimension');
+  });
+
+  server.get("/portfolio/fofypaes", (req, res) => {
+    server.locals.title = 'Portfolio Fofy Pães';
+    res.render('fofypaes');
+  });
+
   server.use((req, res) => {
     server.locals.title = 'Ops, algo de errado não está certo';
     res.status(404).render('404', { whiteHeader: true });
