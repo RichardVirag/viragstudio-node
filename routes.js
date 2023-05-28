@@ -79,6 +79,21 @@ module.exports = (server) => {
     res.render('fofypaes');
   });
 
+  server.get("/portfolio/ceakmaua", (req, res) => {
+    server.locals.title = 'Portfolio CEAK Mauá';
+    res.render('ceakmaua');
+  });
+
+  server.get("/portfolio/ceam", (req, res) => {
+    server.locals.title = 'Portfolio Casa Esperança Amor e Misericórdia';
+    res.render('ceam');
+  });
+
+  server.get("/portfolio/lafragranza", (req, res) => {
+    server.locals.title = 'Portfolio La Fragranza';
+    res.render('lafragranza');
+  });
+
   server.use((req, res) => {
     server.locals.title = 'Ops, algo de errado não está certo';
     res.status(404).render('404', { whiteHeader: true });
