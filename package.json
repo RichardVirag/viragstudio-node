@@ -4,9 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "npm-run-all sass build",
+    "start": "npm run sass && node ./server.js",
     "dev": "npm-run-all --parallel serve watch ui",
-    "build": "node server.js",
     "sass": "sass --no-source-map scss/main.scss:assets/css/main.min.css --style compressed",
     "serve": "nodemon -e * server.js",
     "watch": "sass --watch --no-source-map scss/main.scss:assets/css/main.min.css --style compressed",

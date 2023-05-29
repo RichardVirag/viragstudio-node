@@ -5,7 +5,7 @@ const path = require("path");
 const routes = require("./routes");
 
 const server = express();
-server.listen(5000);
+server.listen(process.env.PORT || 5000)
 
 server.use(express.static(path.join(__dirname, "assets")));
 server.use('/portfolio', express.static(path.join(__dirname, "assets")));
