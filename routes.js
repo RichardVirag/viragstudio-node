@@ -94,6 +94,16 @@ module.exports = (server) => {
     res.render('lafragranza');
   });
 
+  server.get("/portfolio/pililo", (req, res) => {
+    server.locals.title = 'Portfolio Pililo';
+    res.render('pililo');
+  });
+
+  server.get("/portfolio/zetaquara", (req, res) => {
+    server.locals.title = 'Portfolio Zé Taquara';
+    res.render('zetaquara');
+  });
+
   server.use((req, res) => {
     server.locals.title = 'Ops, algo de errado não está certo';
     res.status(404).render('404', { whiteHeader: true });
