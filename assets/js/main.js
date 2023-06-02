@@ -83,3 +83,87 @@ function counterClients() {
   }, 100);
 }
 counterClients();
+
+function validateForm() {
+  let invalid = false;
+  let arrInput = ['name', 'mail', 'phone', 'message'];
+  const validRegexMail = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+  const validRegexProne = /\(\d{2,}\) \d{4,}\-\d{4}/g;
+
+  arrInput.forEach((key) => {
+    let input = document.querySelector(`#${key}`);
+    input.classList.remove('invalid');
+
+    if (!input.value) {
+      input.classList.add('invalid');
+      invalid = true;
+      return;
+    }
+
+    if ((input.id == 'mail' && !input.value.match(validRegexMail)) ||
+      (input.id == 'phone' && !input.value.match(validRegexProne))) {
+      input.classList.add('invalid');
+      invalid = true;
+      return;
+    }
+  });
+
+  let serviceData = new FormData(document.querySelector("form#contactForm"));
+
+  Array.from(document.getElementsByClassName('service')).forEach((input) => {
+    input.classList.remove('invalid');
+
+    if (!serviceData.has('service')) {
+      input.classList.add('invalid');
+      invalid = true;
+    }
+  });
+
+  if (invalid) {
+    return false;
+  }
+  
+  
+  const accountSid = 'ACa1d50ecd5cac6ad0393ca2e7831d99e0';
+  const authToken = '8d4b3cfe0b4a76b141228f73621bd5c1';
+  const client = require('twilio')(accountSid, authToken);
+
+  console.log('teste');
+
+  client.messages
+    .create({
+        body: 'Teste',
+        from: '+13613095255',
+        to: '+5511995701084'
+    })
+    .then(() => {
+      console.log('then');
+    })
+    .done(() => {
+      console.log('done');
+    });
+
+    return false;
+}
+
+const $input = document.querySelector('[data-js="input"]')
+$input.addEventListener('input', handleInput, false)
+
+function handleInput (e) {
+  e.target.value = phoneMask(e.target.value);
+}
+
+function phoneMask (phone) {
+  if (phone.length <= 14) {
+    return phone.replace(/\D/g, '')
+      .replace(/^(\d)/, '($1')
+      .replace(/^(\(\d{2})(\d)/, '$1) $2')
+      .replace(/(\d{4})(\d{1,5})/, '$1-$2')
+      .replace(/(-\d{4})\d+?$/, '$1');
+  }
+  return phone.replace(/\D/g, '')
+    .replace(/^(\d)/, '($1')
+    .replace(/^(\(\d{2})(\d)/, '$1) $2')
+    .replace(/(\d{5})(\d{1,5})/, '$1-$2')
+    .replace(/(-\d{4})\d+?$/, '$1');
+}

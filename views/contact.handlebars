@@ -11,28 +11,29 @@
     <div class="container" data-aos="fade-up">
       <h2>O que você <strong>tem em mente?</strong></h2>
       <p>Se você busca criar algo incrível com inovação e design, utilize a expertise da ViragStudio para te auxiliar nesse processo.</p>
-      <form action="" data-aos="zoom-out">
+      <form action="/send" onsubmit="return validateForm()" data-aos="zoom-out" 
+        method="POST" name="contactForm" id="contactForm" novalidate>
         <div>
-          <input type="text" id="name" placeholder="Nome">
-          <input type="email" id="mail" placeholder="E-mail">
-          <input type="tel" id="phone" placeholder="Telefone">
+          <input type="text" id="name" name="name" placeholder="Nome">
+          <input type="email" id="mail" name="mail" placeholder="E-mail">
+          <input type="tel" id="phone" name="phone" placeholder="Telefone" data-js="input">
         </div>
         <label>Em qual serviço você está interessado?</label>
         <div>
           <div class="item">
-            <input type="checkbox" id="service" value="Website Design & Desenvolvimento">
+            <input type="checkbox" class="service" id="service" name="service" value="Website Design & Desenvolvimento">
             <span>Website Design & Desenvolvimento</span>
           </div>
           <div class="item">
-            <input type="checkbox" id="service" value="Branding">
+            <input type="checkbox" class="service" id="service" name="service" value="Branding">
             <span>Branding</span>
           </div>
           <div class="item">
-            <input type="checkbox" id="service" value="Sistemas Web">
+            <input type="checkbox" class="service" id="service" name="service" value="Sistemas Web">
             <span>Sistemas Web</span>
           </div>
         </div>
-        <textarea id="mensagem" cols="30" rows="10" placeholder="Mensagem"></textarea>
+        <textarea id="message" cols="30" rows="10" name="message" placeholder="Mensagem"></textarea>
         <input type="submit" class="btn md" value="Enviar">
       </form>
     </div>
