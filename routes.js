@@ -1,8 +1,3 @@
-const twilio = require('twilio');
-const dotenv = require('dotenv');
-
-dotenv.config();
-
 module.exports = (server) => {
   server.get("/", (req, res) => {
     server.locals.title = 'Design muito além da solução';
@@ -12,21 +7,6 @@ module.exports = (server) => {
   server.get("/contato", (req, res) => {
     server.locals.title = 'Contate-nos agora mesmo';
     res.render('contact', { whiteHeader: true });
-  });
-
-  server.post("/send", (req, res) => {
-    const client = new twilio('ACa1d50ecd5cac6ad0393ca2e7831d99e0', '8d4b3cfe0b4a76b141228f73621bd5c1');
-    client.messages.create({
-        body: 'teste de teste',
-        from: '+13613095255',
-        to: '01511995701084'
-      })
-      .then(message => {
-        res.render('contact', { whiteHeader: true });
-      })
-      .catch(error => {
-        console.error(error, 'Message not sent');
-      })
   });
 
   server.get("/servicos", (req, res) => {
