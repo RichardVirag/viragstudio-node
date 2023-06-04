@@ -139,7 +139,7 @@
   }
 
   .clients {
-    background: $lightColor;
+    background: $darkColor;
     
     .container {
       display: grid;
@@ -163,11 +163,10 @@
         row-gap: 30px;
       }
 
-      div {
-        width: 200px;
-        height: 30px;
-        background: $darkColor;
+      img {
         margin: 0 auto;
+        max-width: 200px;
+        filter: invert(100%);
       }
     }
   }

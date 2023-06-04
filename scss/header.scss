@@ -10,12 +10,14 @@ header {
   justify-content: space-between;
   align-items: center;
   padding: 0 4%;
+  pointer-events: none;
 
   @media (max-width: 522px) {
     padding: 0 20px;
   }
 
   a {
+    pointer-events: all;
     &.logo {
       background: $primaryColor;
       z-index: 2;
@@ -34,6 +36,7 @@ header {
     }
 
     &.menu {
+      pointer-events: all;
       color: $darkColor;
       display: flex;
       align-items: center;
